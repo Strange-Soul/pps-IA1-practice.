@@ -19,7 +19,7 @@ void output(int n,int sum)
 {
  for(int i=1;i<=n;i++)
  {
-   printf("%d+ ",i);
+   printf("%d+",i);
  }
  printf("\bis %d \n",sum);
 }
