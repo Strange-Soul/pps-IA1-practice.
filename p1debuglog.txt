@@ -1,0 +1,59 @@
+(gdb) b main
+Breakpoint 1 at 0x7fc: file p1original.c, line 16.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice-1/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1original.c:16
+16  {
+(gdb) n
+18   input(&x,&y);
+(gdb) s
+input (a=0x7ffd2f1c0e3c, b=0x7ffd2f1c0e40) at p1original.c:4
+4    printf("Enter Ant Two numbers \n");
+(gdb) n
+Enter Ant Two numbers 
+5    scanf("%d%d",a,b);
+(gdb) n
+5
+8
+6   }
+(gdb) n
+main () at p1original.c:19
+19   add(x,y,&z);
+(gdb) p a
+No symbol "a" in current context.
+(gdb) p x
+$1 = 5
+(gdb) p y
+$2 = 8
+(gdb) n
+20   output(x,y,z);
+(gdb) s
+output (a=5, b=8, sum=13) at p1original.c:13
+13   printf("Addition of %d+%d is%d \n",a,b,sum);
+(gdb) n
+Addition of 5+8 is13 
+14  }
+(gdb) p a
+$3 = 5
+(gdb) p b
+$4 = 8
+(gdb) p sum
+$5 = 13
+(gdb) p z
+No symbol "z" in current context.
+(gdb) p sum
+$6 = 13
+(gdb) n
+main () at p1original.c:21
+21   return 0;
+(gdb) n
+22  }
+(gdb) n
+__libc_start_main (main=0x56171f6007f4 <main>, argc=1, argv=0x7ffd2f1c0f38, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffd2f1c0f28) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) c
+Continuing.
