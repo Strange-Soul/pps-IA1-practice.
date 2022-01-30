@@ -28,7 +28,7 @@ int cmp(int a,int b,int c)
 }
 void output(int a,int b,int c,int largest)
 {
- printf("Largest Number Among %d ,%d ,%d is %d \n",a,b,c,largest);
+ printf("Largest Number Among %d ,%d ,%d is: %d \n",a,b,c,largest);
 }
 int main()
 {
