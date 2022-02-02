@@ -1,16 +1,16 @@
 #include<stdio.h>
 void input(int *a,int *b)
 {
- printf("Enter Ant Two numbers \n");
+ printf("Enter any Two number\n");
  scanf("%d%d",a,b);
 }
 void add(int a,int b,int *sum)
 {
- *sum=a+b;
+  *sum=a+b;
 }
 void output(int a,int b,int sum)
 {
- printf("Addition of %d+%d is%d \n",a,b,sum);
+ printf("Addition of %d+%d is %d \n",a,b,sum);
 }
 int main()
 {
