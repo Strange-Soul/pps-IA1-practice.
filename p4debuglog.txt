@@ -1,0 +1,145 @@
+(gdb) b main
+Breakpoint 1 at 0x8d8: file p4original.c, line 35.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice-3/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:35
+35  {
+(gdb) n
+37    x=input_array_size();
+(gdb) s
+input_array_size () at p4original.c:3
+3   {
+(gdb) n
+5    printf("Enter the size of array\n");
+(gdb) n
+Enter the size of array
+6    scanf("%d",&n);
+(gdb) n
+3
+7    return n;
+(gdb) n
+8   }
+(gdb) n
+main () at p4original.c:38
+38    int y[x];
+(gdb) n
+39    input_array(x,y);
+(gdb) s
+input_array (n=3, a=0x7ffe937229c0) at p4original.c:11
+11  printf("Enter array Element\n");
+(gdb) n
+Enter array Element
+12  for(int i=0;i<n;i++)
+(gdb) p i
+$1 = 21865
+(gdb) n
+14    scanf("%d",&a[i]);
+(gdb) p i
+$2 = 0
+(gdb) n
+1
+12  for(int i=0;i<n;i++)
+(gdb) p i
+$3 = 0
+(gdb) n
+14    scanf("%d",&a[i]);
+(gdb) p i
+$4 = 1
+(gdb) n
+7
+12  for(int i=0;i<n;i++)
+(gdb) n
+14    scanf("%d",&a[i]);
+(gdb) p i
+$5 = 2
+(gdb) n
+11
+12  for(int i=0;i<n;i++)
+(gdb) n
+16  }
+(gdb) p i
+No symbol "i" in current context.
+(gdb) n
+main () at p4original.c:40
+40    z=sum_n_arrays(x,y);
+(gdb) s
+sum_n_arrays (n=3, a=0x7ffe937229c0) at p4original.c:19
+19   int i,sum=0;
+(gdb) n
+20   for(i=0;i<n;i++)
+(gdb) p i
+$6 = 444598181
+(gdb) n
+22     sum=sum+a[i];
+(gdb) p i
+$7 = 0
+(gdb) p sum
+$8 = 0
+(gdb) n
+20   for(i=0;i<n;i++)
+(gdb) p i
+$9 = 0
+(gdb) n
+22     sum=sum+a[i];
+(gdb) p i
+$10 = 1
+(gdb) n
+20   for(i=0;i<n;i++)
+(gdb) p sum
+$11 = 8
+(gdb) n
+22     sum=sum+a[i];
+(gdb) p i
+$12 = 2
+(gdb) n
+20   for(i=0;i<n;i++)
+(gdb) p sum
+$13 = 19
+(gdb) n
+24   return sum;
+(gdb) p sum
+$14 = 19
+(gdb) n
+25  }
+(gdb) n
+main () at p4original.c:41
+41    out_put(x,y,z);
+(gdb) s
+out_put (n=3, a=0x7ffe937229c0, sum=19) at p4original.c:28
+28    for(int i=0;i<n;i++)
+(gdb) n
+30      printf("%d+",a[i]);
+(gdb) p i
+$15 = 0
+(gdb) n
+28    for(int i=0;i<n;i++)
+(gdb) p i
+$16 = 0
+(gdb) n
+30      printf("%d+",a[i]);
+(gdb) p i
+$17 = 1
+(gdb) n
+28    for(int i=0;i<n;i++)
+(gdb) p i
+$18 = 1
+(gdb) n
+30      printf("%d+",a[i]);
+(gdb) p i
+$19 = 2
+(gdb) n
+28    for(int i=0;i<n;i++)
+(gdb) n
+32    printf("\bis %d\n",sum);
+(gdb) p i
+No symbol "i" in current context.
+(gdb) n
+1+7+11is 19
+33  }
+(gdb) n
+main () at p4original.c:42
+42    return 0;
+(gdb) c
+Continuing.
