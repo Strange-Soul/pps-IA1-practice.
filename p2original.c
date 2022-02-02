@@ -2,13 +2,12 @@
 int input()
 {
  int n;
- printf("Enter a Number \n");
+ printf("Enter a Number U wish to Add \n");
  scanf("%d",&n);
  return n;
 }
-int cmp(int a,int b,int c)
+int cmp(int a,int b,int c,int largest)
 {
-  int largest;
  if(a>b && a>c)
  {
    largest=a;
@@ -21,22 +20,21 @@ int cmp(int a,int b,int c)
  }
  else
  {
- largest=c;
- return c;
+  largest =c;
+  return c;
  }
- return 0;
 }
 void output(int a,int b,int c,int largest)
 {
- printf("Largest Number Among %d ,%d ,%d is: %d \n",a,b,c,largest);
+  printf("Largest among %d,%d,%d is %d \n",a,c,b,largest);
 }
 int main()
 {
-  int a,b,c,largest;
-  a=input();
-  b=input();
-  c=input();
-  largest=cmp(a,b,c);
-  output(a,b,c,largest);
+  int x,y,z,largest;
+  x=input();  //fun call
+  y=input();  //fun call 
+  z=input(); // fum call
+  largest=cmp(x,y,z,largest);
+  output(x,y,z,largest);
   return 0;
 }
