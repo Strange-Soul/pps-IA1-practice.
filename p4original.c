@@ -25,7 +25,8 @@ int sum_n_arrays(int n,int a[n])
 }
 void out_put(int n,int a[n],int sum)
 {
-  for(int i=0;i<n;i++)
+  int i;
+  for( i=0;i<n;i++)
   {
     printf("%d+",a[i]);
   }
