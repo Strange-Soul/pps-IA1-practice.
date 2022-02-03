@@ -6,21 +6,18 @@ int input()
  scanf("%d",&n);
  return n;
 }
-int cmp(int a,int b,int c,int largest)
+int cmp(int a,int b,int c)
 {
  if(a>b && a>c)
  {
-   largest =a;
    return a;
  }
  else if(b>a && b>c)
  {
-   largest = b;
    return b;
  }
  else
  {
-   largest = c;
    return c;
  }
 }
@@ -34,7 +31,7 @@ int main()
  x=input();
  y=input();
  z=input();
- l=cmp(x,y,z,l);
- output(x,y,x,l);
+ l=cmp(x,y,z);
+ output(x,y,z,l);
  return 0;
 }
