@@ -27,62 +27,52 @@ sum_n (n=5) at p3final.c:11
 11  int i,sum=0;
 (gdb) n
 12  for(i=1;i<=n;i++)
-(gdb) p i
-$1 = 52789760
-(gdb) p sum
-$2 = 0
 (gdb) n
 14   sum+=i;
 (gdb) p i
+$1 = 1
+(gdb) n
+12  for(i=1;i<=n;i++)
+(gdb) p i
+$2 = 1
+(gdb) p sum
 $3 = 1
 (gdb) n
+14   sum+=i;
+(gdb) n
 12  for(i=1;i<=n;i++)
-(gdb) p sum
-$4 = 1
 (gdb) p i
-$5 = 1
+$4 = 2
+(gdb) p sum
+$5 = 3
 (gdb) n
 14   sum+=i;
-(gdb) p i
-$6 = 2
 (gdb) n
 12  for(i=1;i<=n;i++)
+(gdb) p i
+$6 = 3
 (gdb) p sum
-$7 = 3
+$7 = 6
 (gdb) n
 14   sum+=i;
-(gdb) p i
-$8 = 3
 (gdb) n
 12  for(i=1;i<=n;i++)
+(gdb) p i
+$8 = 4
 (gdb) p sum
-$9 = 6
+$9 = 10
 (gdb) n
 14   sum+=i;
-(gdb) p i
-$10 = 4
 (gdb) n
 12  for(i=1;i<=n;i++)
 (gdb) p i
-$11 = 4
+$10 = 5
 (gdb) p sum
-$12 = 10
-(gdb) n
-14   sum+=i;
-(gdb) p i
-$13 = 5
-(gdb) n
-12  for(i=1;i<=n;i++)
-(gdb) p sum
-$14 = 15
+$11 = 15
 (gdb) n
 16  return sum;
-(gdb) p i
-$15 = 6
 (gdb) n
 17  }
-(gdb) p sum
-$16 = 15
 (gdb) n
 main () at p3final.c:31
 31   output(x,y);
@@ -92,38 +82,47 @@ output (n=5, sum=15) at p3final.c:20
 (gdb) n
 22   printf("%d+",i);
 (gdb) p i
-$17 = 1
+$12 = 1
 (gdb) n
 20   for(int i=1;i<=n;i++)
-(gdb) p i
-$18 = 1
 (gdb) n
 22   printf("%d+",i);
 (gdb) p i
-$19 = 2
+$13 = 2
+(gdb) n
+20   for(int i=1;i<=n;i++)
+(gdb) p i
+$14 = 2
+(gdb) n
+22   printf("%d+",i);
+(gdb) p i
+$15 = 3
+(gdb) n
+20   for(int i=1;i<=n;i++)
+(gdb) p i
+$16 = 3
+(gdb) n
+22   printf("%d+",i);
+(gdb) n
+20   for(int i=1;i<=n;i++)
+(gdb) p i
+$17 = 4
+(gdb) n
+22   printf("%d+",i);
+(gdb) p i
+$18 = 5
 (gdb) n
 20   for(int i=1;i<=n;i++)
 (gdb) n
+24   printf("\bis %d \n",sum);
+(gdb) n
+1+2+3+4+5is 15 
+25   }
 (gdb) p sum
-$3 = 15
+$19 = 15
 (gdb) n
-22   printf("%d+",i);
-(gdb) p i
-$4 = 3
+main () at p3final.c:32
+32   return 0;
 (gdb) n
-20   for(int i=1;i<=n;i++)
-(gdb) p i
-$5 = 3
-(gdb) n
-22   printf("%d+",i);
-(gdb) p i
-$6 = 4
-(gdb) n
-20   for(int i=1;i<=n;i++)
-(gdb) p i
-$7 = 4
-(gdb) n
-22   printf("%d+",i);
-(gdb) p i
-$8 = 5
-(gdb) n
+33  }(gdb) c
+Continuing.
