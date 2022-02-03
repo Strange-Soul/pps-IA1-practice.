@@ -10,7 +10,7 @@ void add(int a,int b,int *sum)
 }
 void output(int a,int b,int sum)
 {
- printf("Addition of %d +%d is %d \n",a,b,sum);
+ printf("Addition of %d+%d is %d \n",a,b,sum);
 }
 int main()
 {
