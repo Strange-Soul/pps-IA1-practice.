@@ -1,0 +1,64 @@
+(gdb) b main
+Breakpoint 1 at 0x8c4: file p9original.c, line 23.
+(gdb) r
+Starting program: /home/runner/pps-test1-VikkiVignesh-60/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p9original.c:23
+23  {
+(gdb) n
+26   input_two_string(s1,s2);
+(gdb) s
+input_two_string (a=0x7ffddbd73030 "\001", 
+    b=0x7ffddbd73050 "0\t@\a\006V") at p9original.c:4
+4    printf("Enter any Words \n");
+(gdb) n
+Enter any Words 
+5    scanf("%s %s",a,b);
+(gdb) n
+hello
+world
+6   }
+(gdb) p n
+No symbol "n" in current context.
+(gdb) n
+main () at p9original.c:27
+27   r=strcmp(s1,s2);
+(gdb) s
+strcmp (a=0x7ffddbd73030 "hello", b=0x7ffddbd73050 "world")
+    at p9original.c:10
+10   for( i=0;a[i]!='\0' && a[i]==b[i];i++);
+(gdb) p i
+$1 = 32765
+(gdb) n
+11   return (a[i] - b[i]);
+(gdb) p a[i]
+$2 = 104 'h'
+(gdb) p b[i]
+$3 = 119 'w'
+(gdb) p strcmp
+$4 = {int (char *, char *)} 0x5606074007c5 <strcmp>
+(gdb) n
+12  }
+(gdb) n
+main () at p9original.c:28
+28   output(s1,s2,r);
+(gdb) s
+output (a=0x7ffddbd73030 "hello", b=0x7ffddbd73050 "world", result=-15)
+    at p9original.c:15
+15   if(result >0)
+(gdb) n
+17   else if(result == 0)
+(gdb) p result
+$5 = -15
+(gdb) n
+20   printf("%s is greater than %s \n",b,a);
+(gdb) n
+world is greater than hello 
+21  }
+(gdb) n
+main () at p9original.c:29
+29   return 0;
+(gdb) n
+30  }(gdb) c
+Continuing.
