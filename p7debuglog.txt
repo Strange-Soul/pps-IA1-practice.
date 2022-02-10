@@ -1,0 +1,81 @@
+(gdb) b main
+Breakpoint 1 at 0x87c: file p7original.c, line 31.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice-13/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p7original.c:31
+31   x=input_complex();
+(gdb) s
+input_complex () at p7original.c:11
+11  {
+(gdb) n
+13   printf("Enter a Complex Number Do u Want to Add\n");
+(gdb) n
+Enter a Complex Number Do u Want to Add
+14   scanf("%f %f",&z.real,&z.imaginary);
+(gdb) n
+2 3
+15   return z;
+(gdb) n
+16  }
+(gdb) n
+main () at p7original.c:32
+32   y=input_complex();
+(gdb) s
+input_complex () at p7original.c:11
+11  {
+(gdb) n
+13   printf("Enter a Complex Number Do u Want to Add\n");
+(gdb) n
+Enter a Complex Number Do u Want to Add
+14   scanf("%f %f",&z.real,&z.imaginary);
+(gdb) n
+4 5
+15   return z;
+(gdb) n
+16  }
+(gdb) p x
+No symbol "x" in current context.
+(gdb) p a
+No symbol "a" in current context.
+(gdb) n
+main () at p7original.c:33
+33   z=add(x,y);
+(gdb) s
+add (a=..., b=...) at p7original.c:20
+20  s.real=a.real+b.real;
+(gdb) p a.real
+$1 = 2
+(gdb) p a.imaginary
+$2 = 3
+(gdb) p b.real
+$3 = 4
+(gdb) p b.imaginary
+$4 = 5
+(gdb) p s.real
+$5 = 0.00699746609
+(gdb) n
+21  s.imaginary=a.imaginary+b.imaginary;
+(gdb) p s.real
+$6 = 6
+(gdb) n
+22  return s;
+(gdb) p s.imaginary
+$7 = 8
+(gdb) n
+23  }
+(gdb) n
+main () at p7original.c:34
+34   output(x,y,z);
+(gdb) s
+output (a=..., b=..., c=...) at p7original.c:26
+26   printf("(%f+%fi) + (%f+%fi) is (%f+%fi) \n",a.real,a.imaginary,b.real,b.imaginary,c.real,c.imaginary);
+(gdb) n
+(2.000000+3.000000i) + (4.000000+5.000000i) is (6.000000+8.000000i) 
+27  }
+(gdb) n
+main () at p7original.c:35
+35   return 0;
+(gdb) c
+Continuing.
